@@ -7,11 +7,10 @@ const Yelp = {
         Authorization: `Bearer ${apiKey}`
       }
     }).then(response => {
-      response.json();
+      return response.json();
     }).then(jsonResponse => {
       if (jsonResponse.businesses) {
-        return jsonResponse.businesses.map(business => {
-          return {
+        return jsonResponse.businesses.map(business => ({
             id: business.id,
             imageSrc: business.image_url,
             name: business.name,
@@ -19,11 +18,10 @@ const Yelp = {
             city: business.location.city,
             state: business.location.state,
             zipCode: business.location.zip_code,
-            category: business.categories.title,
+            category: business.categories[0].title,
             rating: business.rating,
             reviewCount: business.review_count
-          };
-        });
+        }));
       }
     });
   }
