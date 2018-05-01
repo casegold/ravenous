@@ -15,7 +15,7 @@ export const Yelp = {
             id: business.id,
             imageSrc: business.image_url,
             name: business.name,
-            address: business.location.address1 + {business.location.address2 ? ', ' + business.location.address2 : ''},
+            address: business.location.address1 + (business.location.address2 ? ', ' + business.location.address2 : ''),
             city: business.location.city,
             state: business.location.state,
             zipCode: business.location.zip_code,
@@ -26,4 +26,5 @@ export const Yelp = {
         });
       }
     });
+  }
 };
