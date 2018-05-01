@@ -9,7 +9,7 @@ import Yelp from '../../util/Yelp';
 class App extends Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
       businesses: []
     };
@@ -25,7 +25,7 @@ class App extends Component {
       <div className="App">
         <h1>ravenous</h1>
         <SearchBar searchYelp={this.searchYelp} />
-        <BusinessList businesses={businesses} />
+        <BusinessList businesses={this.state.businesses} />
       </div>
     );
   }
