@@ -13,11 +13,16 @@ class App extends Component {
     this.state = {
       businesses: []
     };
+
     this.seachYelp = this.searchYelp.bind(this);
   }
 
   searchYelp(term, location, sortBy) {
-    console.log(`Searching Yelp with ${term}, ${location}, ${sortBy}`);
+    Yelp.search(term.location,sortBy).then(businesses => {
+      this.setState({
+        businesses: businesses
+      });
+    });
   }
 
   render() {
