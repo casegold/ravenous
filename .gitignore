@@ -15,11 +15,7 @@
 .env.development.local
 .env.test.local
 .env.production.local
-<<<<<<< HEAD
 .envrc
-=======
-api.txt
->>>>>>> 9358c9464883fb50a0591596e009212cbaa08ddd
 
 npm-debug.log*
 yarn-debug.log*
